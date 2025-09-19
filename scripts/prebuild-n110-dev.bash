@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Script that compiles upsilon for all the given themes
+# Script that compiles upsilon for n0110 using default theme
 
 echo Compiling for n110
 echo ---

@@ -23,8 +23,8 @@ for lang in "${languages[@]}"
 do
     echo Compiling for n100 $lang $i
     make -j8 MODEL=n0100 EPSILON_I18N=$lang binpack &> binpacks/n100/$lang.log
-    mv output/release/device/n0100/binpack/epsilon.onboarding.internal.bin binpacks/n100/epsilon.onboarding.${themes[i]}.$lang.internal.bin -v
-    mv output/release/device/n0100/binpack/epsilon.onboarding.internal.bin.sha256 binpacks/n100/epsilon.onboarding.${themes[i]}.$lang.internal.bin.sha256 -v
+    mv output/release/device/n0100/binpack/epsilon.onboarding.internal.bin binpacks/n100/epsilon.onboarding.$lang.internal.bin -v
+    mv output/release/device/n0100/binpack/epsilon.onboarding.internal.bin.sha256 binpacks/n100/epsilon.onboarding.$lang.internal.bin.sha256 -v
     rm output/release/device/n0100/apps/i18n.o output/release/device/n0100/apps/i18n.cpp
 done
 
