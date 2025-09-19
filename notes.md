@@ -1,11 +1,13 @@
-# Making a new release
+# Updating prebuilt files
+
+## Making a new beta/official release
 
 Build most files for N0100/N0110 using
 
 ```bash
 cd scripts
-bash ./prebuild.bash
-bash ./prebuild-n0100.bash
+bash ./prebuild-n110.bash
+bash ./prebuild-n100.bash
 ```
 
 This command have to be run at Upsilon repo root.
@@ -36,7 +38,6 @@ cp output/release/device/n0100/flasher.light.bin binpacks/n100/
 cp output/release/device/n0100/flasher.verbose.bin binpacks/n100/
 cp output/release/device/n0110/flasher.light.bin binpacks/n110/
 cp output/release/device/n0110/flasher.verbose.bin binpacks/n110/
-cd binpacks/n100/
 for bin in binpacks/*/*.bin
 do
     shasum -a 256 -b $bin > $bin.sha256
@@ -47,5 +48,16 @@ The binary files along with their checksums should be found in the `binpacks`
 folder and should be merged with the other built files.
 
 <!-- TODO: Automate -->
+
+TODO: Build simulators
+
+## Building a new dev release
+
+Run at Upsilon repo root:
+
+```bash
+bash ./prebuild-n100-dev.bash
+bash ./prebuild-n110-dev.bash
+```
 
 TODO: Build simulators

@@ -1,0 +1,255 @@
+[91m[36m         __  __      ______ ____   ____   _____
+[91m[36m        / / / /_____/ ,____/_/ /  / __ \/'_   /
+[91m[36m       / / / / __ '/ /____/ / /  / / / / / / / 
+[91m[36m      / /_/ / /_/ /___,  / / /__/ /_/ / / / /  
+[91m[36m      \____/ ____/______/_/____/\____/_/ /_/   
+[91m[36m          / /                                  
+[91m[36m         /_/                                   
+[0;34m          - When Epsiloff and Omegout          [0m
+
+[32mBuilding U1.1.0-E15.5.0
+[32m  Targeting Numworks n0100
+[32m    Building on Linux amd64
+[0m[39m
+Makefile:17: reader app included, removing it on n0100. 
+Makefile:21: Only use 1 language on n0100, defaulting to en. 
+Makefile:25: Removing uLab on n0100. 
+Makefile:53: HOME_DISPLAY_EXTERNALS is set but external isn't included, ignoring flag.
+THEME   escher/palette.h
+I18N    apps/i18n.cpp
+HOSTCC  kandinsky/fonts/rasterizer
+CXX     ion/src/device/flasher/display_light.o
+CXX     ion/src/device/flasher/main.o
+CXX     ion/src/device/n0100/boot/rt0.o
+CXX     ion/src/device/n0100/drivers/board.o
+CXX     ion/src/device/n0100/drivers/external_flash.o
+CXX     ion/src/device/n0100/drivers/led.o
+CXX     ion/src/device/n0100/drivers/power.o
+CXX     ion/src/device/n0100/drivers/usb.o
+CXX     ion/src/device/n0100/drivers/reset.o
+CXX     ion/src/device/n0100/platform_info.o
+<command-line>: warning: "EPSILON_VERSION" redefined
+<command-line>: note: this is the location of the previous definition
+<command-line>: warning: "OMEGA_VERSION" redefined
+<command-line>: note: this is the location of the previous definition
+<command-line>: warning: "UPSILON_VERSION" redefined
+<command-line>: note: this is the location of the previous definition
+CC      ion/src/device/shared/boot/isr.o
+CXX     ion/src/device/shared/drivers/backlight.o
+ion/src/device/n0100/boot/rt0.cpp:122:55: warning: FP registers might be clobbered despite 'interrupt' attribute: compile with '-mgeneral-regs-only' [-Wattributes]
+  122 | void __attribute__((interrupt, noinline)) isr_systick() {
+      |                                                       ^
+CXX     ion/src/device/shared/drivers/base64.o
+CXX     ion/src/device/shared/drivers/battery.o
+CXX     ion/src/device/shared/drivers/bldata.o
+CXX     ion/src/device/shared/drivers/board.o
+CXX     ion/src/device/shared/drivers/clipboard.o
+CXX     ion/src/device/shared/drivers/console_dummy.o
+CXX     ion/src/device/shared/drivers/crc32.o
+CXX     ion/src/device/shared/drivers/display.o
+ion/src/device/shared/drivers/bldata.cpp: In member function 'Ion::Device::BootloaderSharedData::BootloaderSharedData()':
+ion/src/device/shared/drivers/bldata.cpp:16:9: warning: 'this_4(D)->m_header' is used uninitialized [-Wuninitialized]
+   16 |     if (m_header != Magic) {
+      |         ^~~~~~~~
+CXX     ion/src/device/shared/drivers/events_keyboard_platform.o
+CXX     ion/src/device/shared/drivers/exam_mode.o
+CXX     ion/src/device/shared/drivers/flash.o
+CXX     ion/src/device/shared/drivers/internal_flash.o
+CXX     ion/src/device/shared/drivers/keyboard.o
+CXX     ion/src/device/shared/drivers/led.o
+CXX     ion/src/device/shared/drivers/pcb_version.o
+CXX     ion/src/device/shared/drivers/power.o
+CXX     ion/src/device/shared/drivers/random.o
+CXX     ion/src/device/shared/drivers/reset.o
+CXX     ion/src/device/shared/drivers/rtc.o
+CXX     ion/src/device/shared/drivers/serial_number.o
+CXX     ion/src/device/shared/drivers/swd.o
+CXX     ion/src/device/shared/drivers/timing.o
+CXX     ion/src/device/shared/drivers/usb.o
+CXX     ion/src/device/shared/drivers/usb_desc.o
+CXX     ion/src/device/shared/drivers/wakeup.o
+CXX     ion/src/device/shared/events.o
+CXX     ion/src/device/shared/stack.o
+CXX     ion/src/device/shared/usb/calculator.o
+CXX     ion/src/device/shared/usb/dfu_interface.o
+CXX     ion/src/device/shared/usb/dfu_xip.o
+CXX     ion/src/device/shared/usb/stack/descriptor/bos_descriptor.o
+CXX     ion/src/device/shared/usb/stack/descriptor/configuration_descriptor.o
+CXX     ion/src/device/shared/usb/stack/descriptor/descriptor.o
+CXX     ion/src/device/shared/usb/stack/descriptor/device_capability_descriptor.o
+CXX     ion/src/device/shared/usb/stack/descriptor/device_descriptor.o
+CXX     ion/src/device/shared/usb/stack/descriptor/dfu_functional_descriptor.o
+CXX     ion/src/device/shared/usb/stack/descriptor/extended_compat_id_descriptor.o
+CXX     ion/src/device/shared/usb/stack/descriptor/interface_descriptor.o
+CXX     ion/src/device/shared/usb/stack/descriptor/language_id_string_descriptor.o
+CXX     ion/src/device/shared/usb/stack/descriptor/microsoft_os_string_descriptor.o
+CXX     ion/src/device/shared/usb/stack/descriptor/platform_device_capability_descriptor.o
+CXX     ion/src/device/shared/usb/stack/descriptor/string_descriptor.o
+CXX     ion/src/device/shared/usb/stack/descriptor/url_descriptor.o
+CXX     ion/src/device/shared/usb/stack/descriptor/webusb_platform_descriptor.o
+CXX     ion/src/device/shared/usb/stack/device.o
+CXX     ion/src/device/shared/usb/stack/endpoint0.o
+CXX     ion/src/device/shared/usb/stack/interface.o
+CXX     ion/src/device/shared/usb/stack/request_recipient.o
+CXX     ion/src/device/shared/usb/stack/setup_packet.o
+CC      ion/src/external/lz4/lz4.o
+CXX     ion/src/device/shared/usb/stack/streamable.o
+CXX     ion/src/shared/collect_registers.o
+CXX     ion/src/shared/console_line.o
+CXX     ion/src/shared/crc32_eat_byte.o
+CXX     ion/src/shared/decompress.o
+CXX     ion/src/shared/events.o
+CXX     ion/src/shared/events_keyboard.o
+CXX     ion/src/shared/events_modifier.o
+CXX     ion/src/shared/internal_storage.o
+CXX     ion/src/shared/keyboard/layout_B2/layout_events.o
+ion/src/shared/internal_storage.cpp: In member function 'int Ion::InternalStorage::numberOfRecords()':
+ion/src/shared/internal_storage.cpp:231:18: warning: unused variable 'name' [-Wunused-variable]
+  231 |     const char * name = fullNameOfRecordStarting(p);
+      |                  ^~~~
+CXX     ion/src/shared/rtc.o
+CXX     ion/src/shared/stack_position.o
+CXX     ion/src/shared/storage.o
+CXX     ion/src/shared/unicode/utf8_decoder.o
+CXX     ion/src/shared/unicode/utf8_helper.o
+CXX     kandinsky/src/color.o
+CXX     kandinsky/src/context.o
+CXX     kandinsky/src/context_circle.o
+CXX     kandinsky/src/context_line.o
+CXX     kandinsky/src/context_pixel.o
+CXX     kandinsky/src/context_polygon.o
+CXX     kandinsky/src/context_rect.o
+CXX     kandinsky/src/context_text.o
+CXX     kandinsky/src/font.o
+CXX     kandinsky/src/framebuffer.o
+CXX     kandinsky/src/framebuffer_context.o
+CXX     kandinsky/src/ion_context.o
+CXX     kandinsky/src/point.o
+CXX     kandinsky/src/postprocess_context.o
+CXX     kandinsky/src/postprocess_gamma_context.o
+CXX     kandinsky/src/postprocess_invert_context.o
+CXX     kandinsky/src/postprocess_zoom_context.o
+CXX     kandinsky/src/rect.o
+CC      liba/src/abs.o
+CC      liba/src/aeabi-rt/atexit.o
+AS      liba/src/armv7m/longjmp.o
+AS      liba/src/armv7m/setjmp.o
+CC      liba/src/assert.o
+CC      liba/src/bzero.o
+CC      liba/src/ctype.o
+CC      liba/src/errno.o
+CC      liba/src/external/openbsd/b_exp__D.o
+CC      liba/src/external/openbsd/b_log__D.o
+CC      liba/src/external/openbsd/b_tgamma.o
+CC      liba/src/external/openbsd/e_acos.o
+CC      liba/src/external/openbsd/e_acosf.o
+CC      liba/src/external/openbsd/e_acosh.o
+CC      liba/src/external/openbsd/e_acoshf.o
+CC      liba/src/external/openbsd/e_asin.o
+CC      liba/src/external/openbsd/e_asinf.o
+CC      liba/src/external/openbsd/e_atan2.o
+CC      liba/src/external/openbsd/e_atan2f.o
+CC      liba/src/external/openbsd/e_atanh.o
+CC      liba/src/external/openbsd/e_atanhf.o
+CC      liba/src/external/openbsd/e_cosh.o
+CC      liba/src/external/openbsd/e_coshf.o
+CC      liba/src/external/openbsd/e_exp.o
+CC      liba/src/external/openbsd/e_expf.o
+CC      liba/src/external/openbsd/e_fmod.o
+CC      liba/src/external/openbsd/e_fmodf.o
+CC      liba/src/external/openbsd/e_hypot.o
+CC      liba/src/external/openbsd/e_hypotf.o
+CC      liba/src/external/openbsd/e_lgamma_r.o
+CC      liba/src/external/openbsd/e_lgammaf_r.o
+CC      liba/src/external/openbsd/e_log.o
+CC      liba/src/external/openbsd/e_log10.o
+CC      liba/src/external/openbsd/e_log2.o
+CC      liba/src/external/openbsd/e_log10f.o
+CC      liba/src/external/openbsd/e_logf.o
+CC      liba/src/external/openbsd/e_pow.o
+CC      liba/src/external/openbsd/e_powf.o
+CC      liba/src/external/openbsd/e_rem_pio2.o
+CC      liba/src/external/openbsd/e_rem_pio2f.o
+CC      liba/src/external/openbsd/e_scalb.o
+CC      liba/src/external/openbsd/e_sinh.o
+CC      liba/src/external/openbsd/e_sinhf.o
+CC      liba/src/external/openbsd/e_sqrt.o
+CC      liba/src/external/openbsd/e_sqrtf.o
+CC      liba/src/external/openbsd/k_cos.o
+CC      liba/src/external/openbsd/k_cosf.o
+CC      liba/src/external/openbsd/k_rem_pio2.o
+CC      liba/src/external/openbsd/k_rem_pio2f.o
+CC      liba/src/external/openbsd/k_sin.o
+CC      liba/src/external/openbsd/k_sinf.o
+CC      liba/src/external/openbsd/k_tan.o
+CC      liba/src/external/openbsd/k_tanf.o
+CC      liba/src/external/openbsd/s_asinh.o
+CC      liba/src/external/openbsd/s_asinhf.o
+CC      liba/src/external/openbsd/s_atan.o
+CC      liba/src/external/openbsd/s_atanf.o
+CC      liba/src/external/openbsd/s_ceil.o
+CC      liba/src/external/openbsd/s_ceilf.o
+CC      liba/src/external/openbsd/s_copysign.o
+CC      liba/src/external/openbsd/s_copysignf.o
+CC      liba/src/external/openbsd/s_cos.o
+CC      liba/src/external/openbsd/s_cosf.o
+CC      liba/src/external/openbsd/s_erf.o
+CC      liba/src/external/openbsd/s_erff.o
+CC      liba/src/external/openbsd/s_expm1.o
+CC      liba/src/external/openbsd/s_expm1f.o
+CC      liba/src/external/openbsd/s_fabs.o
+CC      liba/src/external/openbsd/s_fabsf.o
+CC      liba/src/external/openbsd/s_floor.o
+CC      liba/src/external/openbsd/s_floorf.o
+CC      liba/src/external/openbsd/s_fmax.o
+CC      liba/src/external/openbsd/s_fmaxf.o
+CC      liba/src/external/openbsd/s_frexp.o
+CC      liba/src/external/openbsd/s_frexpf.o
+CC      liba/src/external/openbsd/s_log1p.o
+CC      liba/src/external/openbsd/s_log1pf.o
+CC      liba/src/external/openbsd/s_logb.o
+CC      liba/src/external/openbsd/s_logbf.o
+CC      liba/src/external/openbsd/s_modf.o
+CC      liba/src/external/openbsd/s_modff.o
+CC      liba/src/external/openbsd/s_nextafter.o
+CC      liba/src/external/openbsd/s_nextafterf.o
+CC      liba/src/external/openbsd/s_rint.o
+CC      liba/src/external/openbsd/s_round.o
+CC      liba/src/external/openbsd/s_roundf.o
+CC      liba/src/external/openbsd/s_scalbn.o
+CC      liba/src/external/openbsd/s_scalbnf.o
+CC      liba/src/external/openbsd/s_signgam.o
+CC      liba/src/external/openbsd/s_sin.o
+CC      liba/src/external/openbsd/s_sinf.o
+CC      liba/src/external/openbsd/s_tan.o
+CC      liba/src/external/openbsd/s_tanf.o
+CC      liba/src/external/openbsd/s_tanh.o
+CC      liba/src/external/openbsd/s_tanhf.o
+CC      liba/src/external/openbsd/s_trunc.o
+CC      liba/src/external/openbsd/s_truncf.o
+CC      liba/src/external/openbsd/w_lgamma.o
+CC      liba/src/external/openbsd/w_lgammaf.o
+CC      liba/src/fpclassify.o
+CC      liba/src/external/sqlite/mem5.o
+CC      liba/src/fpclassifyf.o
+CC      liba/src/ieee754.o
+CC      liba/src/itoa.o
+CC      liba/src/malloc.o
+CC      liba/src/memcpy.o
+CC      liba/src/memcmp.o
+CC      liba/src/memmove.o
+CC      liba/src/memset.o
+CC      liba/src/nearbyint.o
+CC      liba/src/nearbyintf.o
+CC      liba/src/strchr.o
+CC      liba/src/strlcat.o
+CC      liba/src/strcmp.o
+CC      liba/src/strlcpy.o
+CC      liba/src/strlen.o
+RASTER  kandinsky/fonts/LargeFontSimple.cpp
+RASTER  kandinsky/fonts/SmallFontSimple.cpp
+CXX     kandinsky/fonts/SmallFontSimple.o
+CXX     kandinsky/fonts/LargeFontSimple.o
+LD      flasher.light.elf
+/usr/lib/gcc/arm-none-eabi/14.2.0/../../../../arm-none-eabi/bin/ld: warning: output/release/device/n0100/flasher.light.elf has a LOAD segment with RWX permissions
+OBJCOPY flasher.light.bin

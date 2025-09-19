@@ -1,0 +1,21 @@
+[91m[36m         __  __      ______ ____   ____   _____
+[91m[36m        / / / /_____/ ,____/_/ /  / __ \/'_   /
+[91m[36m       / / / / __ '/ /____/ / /  / / / / / / / 
+[91m[36m      / /_/ / /_/ /___,  / / /__/ /_/ / / / /  
+[91m[36m      \____/ ____/______/_/____/\____/_/ /_/   
+[91m[36m          / /                                  
+[91m[36m         /_/                                   
+[0;34m          - When Epsiloff and Omegout          [0m
+
+[32mBuilding U1.1.0-E15.5.0
+[32m  Targeting Numworks n0100
+[32m    Building on Linux amd64
+[0m[39m
+Makefile:17: reader app included, removing it on n0100. 
+Makefile:21: Only use 1 language on n0100, defaulting to en. 
+Makefile:25: Removing uLab on n0100. 
+Makefile:53: HOME_DISPLAY_EXTERNALS is set but external isn't included, ignoring flag.
+CXX     ion/src/device/flasher/display_verbose.o
+LD      flasher.verbose.elf
+/usr/lib/gcc/arm-none-eabi/14.2.0/../../../../arm-none-eabi/bin/ld: warning: output/release/device/n0100/flasher.verbose.elf has a LOAD segment with RWX permissions
+OBJCOPY flasher.verbose.bin
