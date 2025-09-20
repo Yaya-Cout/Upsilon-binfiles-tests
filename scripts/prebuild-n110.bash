@@ -79,7 +79,7 @@ done
 mv output/release/device/n0110/binpack/flasher.light.bin binpacks/n110/flasher.light.bin
 
 echo Building bootloader...
-make -j8 MODEL=n0110 bootloader.bin &> binpacks/n110/bootloader.log
+make -j8 MODEL=n0110 bootloader &> binpacks/n110/bootloader.log
 mv output/release/device/n0110/bootloader.bin binpacks/n110/bootloader.bin
 
 echo Generating checksums...
