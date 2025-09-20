@@ -1,4 +1,4 @@
-Compilation start: Sat Sep 13 04:01:13 PM CEST 2025
+Compilation start: Sat Sep 20 03:19:39 PM CEST 2025
 [91m[36m         __  __      ______ ____   ____   _____
 [91m[36m        / / / /_____/ ,____/_/ /  / __ \/'_   /
 [91m[36m       / / / / __ '/ /____/ / /  / / / / / / / 
@@ -13,8 +13,8 @@ Compilation start: Sat Sep 13 04:01:13 PM CEST 2025
 [32m    Building on Linux amd64
 [0m[39m
 CXX     ion/src/device/bootloader/drivers/external_flash.o
-I18N    apps/i18n.cpp
 APPS_LAYOUTapps/home/apps_layout.cpp
+I18N    apps/i18n.cpp
 QSTRDAT python/port/genhdr/qstrdefs.generated.h
 THEME   escher/palette.h
 HOSTCC  escher/image/inliner
@@ -48,4 +48,4 @@ Traceback (most recent call last):
 AttributeError: module 'os' has no attribute 'stderr'
 make: *** [escher/Makefile:13: output/release/device/bootloader/escher/palette.h] Error 1
 make: *** Waiting for unfinished jobs....
-Compilation start: Sat Sep 13 04:01:15 PM CEST 2025
+Compilation start: Sat Sep 20 03:19:41 PM CEST 2025

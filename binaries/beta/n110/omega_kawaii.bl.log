@@ -1,4 +1,4 @@
-Compilation start: Sat Sep 13 04:05:35 PM CEST 2025
+Compilation start: Sat Sep 20 03:23:59 PM CEST 2025
 [91m[36m         __  __      ______ ____   ____   _____
 [91m[36m        / / / /_____/ ,____/_/ /  / __ \/'_   /
 [91m[36m       / / / / __ '/ /____/ / /  / / / / / / / 
@@ -13,8 +13,8 @@ Compilation start: Sat Sep 13 04:05:35 PM CEST 2025
 [32m    Building on Linux amd64
 [0m[39m
 CXX     ion/src/device/bootloader/drivers/external_flash.o
-I18N    apps/i18n.cpp
 APPS_LAYOUTapps/home/apps_layout.cpp
+I18N    apps/i18n.cpp
 QSTRDAT python/port/genhdr/qstrdefs.generated.h
 THEME   escher/palette.h
 HOSTCC  escher/image/inliner
@@ -104,7 +104,6 @@ INLINER apps/probability/images/uniform_icon.cpp
 INLINER apps/reader/reader_icon.cpp
 INLINER apps/regression/regression_icon.cpp
 INLINER apps/rpn/rpn_icon.cpp
-INLINER apps/sequence/sequence_icon.cpp
 CXX     ion/src/device/bootloader/drivers/board.o
 CXX     ion/src/device/bootloader/drivers/cache.o
 CXX     ion/src/device/bootloader/drivers/reset.o
@@ -137,8 +136,8 @@ CXX     ion/src/device/shared/usb/stack/descriptor/bos_descriptor.o
 CXX     ion/src/device/shared/usb/stack/descriptor/configuration_descriptor.o
 CXX     ion/src/device/shared/usb/stack/descriptor/descriptor.o
 CXX     ion/src/device/shared/usb/stack/descriptor/device_capability_descriptor.o
-CXX     ion/src/device/shared/usb/stack/descriptor/dfu_functional_descriptor.o
 CXX     ion/src/device/shared/usb/stack/descriptor/device_descriptor.o
+CXX     ion/src/device/shared/usb/stack/descriptor/dfu_functional_descriptor.o
 CXX     ion/src/device/shared/usb/stack/descriptor/extended_compat_id_descriptor.o
 CXX     ion/src/device/shared/usb/stack/descriptor/interface_descriptor.o
 CXX     ion/src/device/shared/usb/stack/descriptor/language_id_string_descriptor.o
@@ -160,8 +159,8 @@ CC      liba/src/memset.o
 CC      liba/src/strlcpy.o
 CC      liba/src/strlen.o
 CXX     libaxx/src/cxxabi/pure_virtual.o
-CXX     apps/apps_container.o
 CXX     apps/alternate_empty_nested_menu_controller.o
+CXX     apps/apps_container.o
 CXX     apps/apps_container_launch_on_boarding.o
 CXX     apps/apps_container_prompt_none.o
 CXX     apps/apps_container_storage.o
@@ -187,6 +186,7 @@ In file included from ./apps/rpn/app.h:11,
 ./apps/rpn/rpn_toolbox.h:17:8: note:   by 'bool Rpn::Toolbox::selectLeaf(int)'
    17 |   bool selectLeaf(int selectedRow);
       |        ^~~~~~~~~~
+CXX     apps/atomic/table_lines_view.o
 In file included from ./apps/calculation/../shared/../apps_container.h:10,
                  from ./apps/calculation/../shared/text_field_delegate_app.h:8,
                  from ./apps/calculation/../shared/text_field_delegate.h:4,
@@ -201,7 +201,6 @@ In file included from ./apps/rpn/app.h:11,
 ./apps/rpn/rpn_toolbox.h:17:8: note:   by 'bool Rpn::Toolbox::selectLeaf(int)'
    17 |   bool selectLeaf(int selectedRow);
       |        ^~~~~~~~~~
-CXX     apps/atomic/table_lines_view.o
 CXX     apps/backlight_dimming_timer.o
 CXX     apps/battery_timer.o
 CXX     apps/battery_view.o
@@ -300,11 +299,11 @@ CXX     apps/exam_pop_up_controller.o
 CXX     apps/external/archive.o
 CXX     apps/external/extapp_api.o
 CXX     apps/external/external_icon.o
+CXX     apps/global_preferences.o
 apps/external/archive.cpp: In function 'bool External::Archive::fileAtIndex(size_t, File&)':
 apps/external/archive.cpp:43:13: warning: comparison of integer expressions of different signedness: 'size_t' {aka 'unsigned int'} and 'int' [-Wsign-compare]
    43 |   if (index == -1) {
       |       ~~~~~~^~~~~
-CXX     apps/global_preferences.o
 CXX     apps/graph/graph_icon.o
 CXX     apps/graph/continuous_function_store.o
 CXX     apps/graph/graph/banner_view.o
@@ -364,6 +363,8 @@ CXX     apps/on_boarding/localization_controller.o
 CXX     apps/on_boarding/logo_controller.o
 CXX     apps/on_boarding/logo_icon.o
 CXX     apps/on_boarding/power_on_self_test.o
+CXX     apps/on_boarding/prompt_controller.o
+CXX     apps/probability/probability_icon.o
 In file included from ./apps/calculation/../shared/../apps_container.h:10,
                  from ./apps/calculation/../shared/text_field_delegate_app.h:8,
                  from ./apps/calculation/../shared/text_field_delegate.h:4,
@@ -378,8 +379,6 @@ In file included from ./apps/rpn/app.h:11,
 ./apps/rpn/rpn_toolbox.h:17:8: note:   by 'bool Rpn::Toolbox::selectLeaf(int)'
    17 |   bool selectLeaf(int selectedRow);
       |        ^~~~~~~~~~
-CXX     apps/on_boarding/prompt_controller.o
-CXX     apps/probability/probability_icon.o
 CXX     apps/probability/calculation/calculation.o
 CXX     apps/probability/calculation/discrete_calculation.o
 In file included from escher/include/escher.h:59,
@@ -417,8 +416,8 @@ CXX     apps/probability/distribution/fisher_distribution.o
 CXX     apps/probability/distribution/geometric_distribution.o
 CXX     apps/probability/distribution/helper.o
 CXX     apps/probability/distribution/hypergeometric_function.o
-CXX     apps/probability/distribution/poisson_distribution.o
 CXX     apps/probability/distribution/normal_distribution.o
+CXX     apps/probability/distribution/poisson_distribution.o
 CXX     apps/probability/distribution/regularized_gamma.o
 CXX     apps/probability/distribution/student_distribution.o
 CXX     apps/probability/distribution/two_parameter_distribution.o
@@ -525,7 +524,7 @@ CXX     apps/rpn/rpn_input_controller.o
 CXX     apps/rpn/rpn_stack.o
 CXX     apps/rpn/rpn_stack_controller.o
 CXX     apps/rpn/rpn_toolbox.o
-CXX     apps/sequence/sequence_icon.o
+INLINER apps/sequence/sequence_icon.cpp
 CXX     apps/sequence/graph/curve_parameter_controller.o
 In file included from apps/rpn/../shared/../apps_container.h:10,
                  from apps/rpn/../shared/text_field_delegate_app.h:8,
@@ -583,9 +582,10 @@ CXX     apps/sequence/list/list_controller.o
 CXX     apps/sequence/list/list_parameter_controller.o
 CXX     apps/sequence/list/sequence_toolbox.o
 CXX     apps/sequence/list/type_parameter_controller.o
+CXX     apps/sequence/sequence_icon.o
 CXX     apps/sequence/values/interval_parameter_controller.o
-CXX     apps/sequence/values/values_controller.o
 INLINER apps/settings/settings_icon.cpp
+CXX     apps/sequence/values/values_controller.o
 CXX     apps/settings/cell_with_separator.o
 CXX     apps/settings/main_controller.o
 CXX     apps/settings/main_controller_prompt_none.o
@@ -608,11 +608,11 @@ CXX     apps/settings/sub_menu/external_controller.o
 CXX     apps/settings/sub_menu/generic_sub_controller.o
 CXX     apps/settings/sub_menu/localization_controller.o
 CXX     apps/settings/sub_menu/math_options_controller.o
-CXX     apps/settings/sub_menu/preferences_controller.o
 apps/settings/sub_menu/exam_mode_controller.cpp: In member function 'virtual void Settings::ExamModeController::willDisplayCellForIndex(HighlightCell*, int)':
 apps/settings/sub_menu/exam_mode_controller.cpp:86:17: warning: unused variable 'preferences' [-Wunused-variable]
    86 |   Preferences * preferences = Preferences::sharedPreferences();
       |                 ^~~~~~~~~~~
+CXX     apps/settings/sub_menu/preferences_controller.o
 CXX     apps/settings/sub_menu/selectable_view_with_messages.o
 CXX     apps/shared/banner_view.o
 CXX     apps/shared/buffer_function_title_cell.o
@@ -822,8 +822,8 @@ CXX     escher/src/tab_view_cell.o
 CXX     escher/src/tab_view_controller.o
 CXX     escher/src/tab_view_data_source.o
 CXX     escher/src/table_cell.o
-CXX     escher/src/table_view_data_source.o
 CXX     escher/src/table_view.o
+CXX     escher/src/table_view_data_source.o
 CXX     escher/src/text_area.o
 CXX     escher/src/text_cursor_view.o
 CXX     escher/src/text_field.o
@@ -863,13 +863,13 @@ CXX     ion/src/device/shared/drivers/clipboard.o
 CXX     ion/src/device/shared/drivers/console_dummy.o
 CXX     ion/src/device/shared/drivers/exam_mode.o
 CXX     ion/src/device/shared/drivers/pcb_version.o
+ion/src/device/bootloader/boot/rt0.cpp:175:55: warning: FP registers might be clobbered despite 'interrupt' attribute: compile with '-mgeneral-regs-only' [-Wattributes]
+  175 | void __attribute__((interrupt, noinline)) isr_systick() {
+      |                                                       ^
 ion/src/device/shared/drivers/bldata.cpp: In member function 'Ion::Device::BootloaderSharedData::BootloaderSharedData()':
 ion/src/device/shared/drivers/bldata.cpp:16:9: warning: 'this_4(D)->m_header' is used uninitialized [-Wuninitialized]
    16 |     if (m_header != Magic) {
       |         ^~~~~~~~
-ion/src/device/bootloader/boot/rt0.cpp:175:55: warning: FP registers might be clobbered despite 'interrupt' attribute: compile with '-mgeneral-regs-only' [-Wattributes]
-  175 | void __attribute__((interrupt, noinline)) isr_systick() {
-      |                                                       ^
 CXX     ion/src/device/shared/drivers/rtc.o
 CXX     ion/src/device/shared/events.o
 CXX     ion/src/device/shared/stack.o
@@ -950,8 +950,8 @@ CC      liba/src/external/openbsd/e_log10f.o
 CC      liba/src/external/openbsd/e_log2.o
 CC      liba/src/external/openbsd/e_logf.o
 CC      liba/src/external/openbsd/e_pow.o
-CC      liba/src/external/openbsd/e_powf.o
 CC      liba/src/external/openbsd/e_rem_pio2.o
+CC      liba/src/external/openbsd/e_powf.o
 CC      liba/src/external/openbsd/e_rem_pio2f.o
 CC      liba/src/external/openbsd/e_scalb.o
 CC      liba/src/external/openbsd/e_sinh.o
@@ -998,8 +998,8 @@ CC      liba/src/external/openbsd/s_nextafter.o
 CC      liba/src/external/openbsd/s_nextafterf.o
 CC      liba/src/external/openbsd/s_rint.o
 CC      liba/src/external/openbsd/s_round.o
-CC      liba/src/external/openbsd/s_scalbn.o
 CC      liba/src/external/openbsd/s_roundf.o
+CC      liba/src/external/openbsd/s_scalbn.o
 CC      liba/src/external/openbsd/s_scalbnf.o
 CC      liba/src/external/openbsd/s_signgam.o
 CC      liba/src/external/openbsd/s_sin.o
@@ -1012,8 +1012,8 @@ CC      liba/src/external/openbsd/s_trunc.o
 CC      liba/src/external/openbsd/s_truncf.o
 CC      liba/src/external/openbsd/w_lgamma.o
 CC      liba/src/external/openbsd/w_lgammaf.o
-CC      liba/src/fpclassify.o
 CC      liba/src/external/sqlite/mem5.o
+CC      liba/src/fpclassify.o
 CC      liba/src/fpclassifyf.o
 CC      liba/src/ieee754.o
 CC      liba/src/itoa.o
@@ -1064,8 +1064,8 @@ CXX     poincare/src/division_quotient.o
 CXX     poincare/src/division_remainder.o
 CXX     poincare/src/empty_expression.o
 CXX     poincare/src/empty_layout.o
-CXX     poincare/src/equal.o
 CXX     poincare/src/erf_inv.o
+CXX     poincare/src/equal.o
 CXX     poincare/src/evaluation.o
 CXX     poincare/src/exception_checkpoint.o
 CXX     poincare/src/expression.o
@@ -1079,8 +1079,8 @@ CXX     poincare/src/fraction_layout.o
 CXX     poincare/src/function.o
 CXX     poincare/src/great_common_divisor.o
 CXX     poincare/src/grid_layout.o
-CXX     poincare/src/horizontal_layout.o
 CXX     poincare/src/helpers.o
+CXX     poincare/src/horizontal_layout.o
 CXX     poincare/src/hyperbolic_arc_cosine.o
 CXX     poincare/src/hyperbolic_arc_sine.o
 CXX     poincare/src/hyperbolic_arc_tangent.o
@@ -1095,8 +1095,8 @@ CXX     poincare/src/integer.o
 CXX     poincare/src/integral.o
 CXX     poincare/src/integral_layout.o
 CXX     poincare/src/inv_binom.o
-CXX     poincare/src/inv_norm.o
 CXX     poincare/src/kmat.o
+CXX     poincare/src/inv_norm.o
 CXX     poincare/src/layout.o
 CXX     poincare/src/layout_cursor.o
 CXX     poincare/src/layout_helper.o
@@ -1164,8 +1164,8 @@ CXX     poincare/src/sum.o
 CXX     poincare/src/sum_and_product.o
 CXX     poincare/src/sum_layout.o
 CXX     poincare/src/symbol.o
-CXX     poincare/src/symbol_abstract.o
 CXX     poincare/src/tangent.o
+CXX     poincare/src/symbol_abstract.o
 CXX     poincare/src/tree_handle.o
 CXX     poincare/src/tree_node.o
 CXX     poincare/src/tree_pool.o
@@ -1191,17 +1191,17 @@ CXX     python/port/mod/kandinsky/modkandinsky.o
 CC      python/port/mod/kandinsky/modkandinsky_table.o
 CXX     python/port/mod/matplotlib/modmatplotlib.o
 CC      python/port/mod/matplotlib/modmatplotlib_table.o
-python/port/mod/kandinsky/modkandinsky.cpp: In function 'void* modkandinsky_fill_polygon(size_t, void* const*)':
-python/port/mod/kandinsky/modkandinsky.cpp:158:17: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'unsigned int'} [-Wsign-compare]
-  158 |   for(int i=0; i<itemLength; i++) {
-      |                ~^~~~~~~~~~~
 CXX     python/port/mod/matplotlib/pyplot/modpyplot.o
 CC      python/port/mod/matplotlib/pyplot/modpyplot_table.o
 CXX     python/port/mod/matplotlib/pyplot/plot_controller.o
 CXX     python/port/mod/matplotlib/pyplot/plot_store.o
+python/port/mod/kandinsky/modkandinsky.cpp: In function 'void* modkandinsky_fill_polygon(size_t, void* const*)':
+python/port/mod/kandinsky/modkandinsky.cpp:158:17: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'unsigned int'} [-Wsign-compare]
+  158 |   for(int i=0; i<itemLength; i++) {
+      |                ~^~~~~~~~~~~
 CXX     python/port/mod/matplotlib/pyplot/plot_view.o
-CC      python/port/mod/os/modos_table.o
 CXX     python/port/mod/os/modos.o
+CC      python/port/mod/os/modos_table.o
 CXX     python/port/mod/time/modtime.o
 CC      python/port/mod/time/modtime_table.o
 CXX     python/port/mod/turtle/modturtle.o
@@ -1239,7 +1239,6 @@ CXX     python/port/port.o
 CC      python/port/stackctrl.o
 CC      python/src/extmod/modurandom.o
 CC      python/src/py/argcheck.o
-CC      python/src/py/asmarm.o
 python/port/stackctrl.c: In function 'mp_stack_ctrl_init':
 python/port/stackctrl.c:35:32: warning: storing the address of local variable 'stack_dummy' in 'mp_state_ctx.thread.stack_top' [-Wdangling-pointer=]
    35 |     MP_STATE_THREAD(stack_top) = (char*)&stack_dummy;
@@ -1250,6 +1249,7 @@ In file included from python/port/stackctrl.c:27:
 python/src/py/mpstate.h:323:23: note: 'mp_state_ctx' declared here
   323 | extern mp_state_ctx_t mp_state_ctx;
       |                       ^~~~~~~~~~~~
+CC      python/src/py/asmarm.o
 CC      python/src/py/asmbase.o
 CC      python/src/py/asmthumb.o
 CC      python/src/py/asmx64.o
@@ -1415,4 +1415,4 @@ OBJCOPY epsilon.onboarding.B.bin
 /usr/lib/gcc/arm-none-eabi/14.2.0/../../../../arm-none-eabi/bin/ld: warning: output/release/device/bootloader/epsilon.onboarding.A.elf has a LOAD segment with RWX permissions
 OBJCOPY epsilon.onboarding.A.bin
 COMBINE output/release/device/bootloader/epsilon.onboarding.bin
-Compilation start: Sat Sep 13 04:06:57 PM CEST 2025
+Compilation start: Sat Sep 20 03:25:19 PM CEST 2025

@@ -1,4 +1,4 @@
-Compilation start: Sat Sep 13 03:58:20 PM CEST 2025
+Compilation start: Sat Sep 20 03:16:48 PM CEST 2025
 [91m[36m         __  __      ______ ____   ____   _____
 [91m[36m        / / / /_____/ ,____/_/ /  / __ \/'_   /
 [91m[36m       / / / / __ '/ /____/ / /  / / / / / / / 
@@ -62,8 +62,8 @@ ICON    apps/settings/settings_icon.png
 ICON    apps/solver/solver_icon.png
 ICON    apps/statistics/stat_icon.png
 ICON    bootloader/computer.png
- (!!)   Icon apps/reader_icon.png not found in icon theme omega_trans. Using default!
 RASTER  kandinsky/fonts/ItalicLargeFontExtended.cpp
+ (!!)   Icon apps/reader_icon.png not found in icon theme omega_trans. Using default!
 RASTER  kandinsky/fonts/ItalicSmallFontExtended.cpp
 RASTER  kandinsky/fonts/LargeFontExtended.cpp
 RASTER  kandinsky/fonts/SmallFontExtended.cpp
@@ -107,38 +107,38 @@ INLINER apps/rpn/rpn_icon.cpp
 RASTER  kandinsky/fonts/LargeFontSimple.cpp
 RASTER  kandinsky/fonts/SmallFontSimple.cpp
 CXX     ion/src/device/flasher/display_light.o
+CXX     ion/src/device/flasher/main.o
 CXX     ion/src/device/n0110/boot/rt0.o
 CXX     ion/src/device/n0110/drivers/board.o
-CXX     ion/src/device/flasher/main.o
 CXX     ion/src/device/n0110/drivers/cache.o
 CXX     ion/src/device/n0110/drivers/external_flash.o
 CXX     ion/src/device/n0110/drivers/led.o
 CXX     ion/src/device/n0110/drivers/power.o
-CXX     ion/src/device/n0110/drivers/reset.o
 ion/src/device/n0110/boot/rt0.cpp:122:55: warning: FP registers might be clobbered despite 'interrupt' attribute: compile with '-mgeneral-regs-only' [-Wattributes]
   122 | void __attribute__((interrupt, noinline)) isr_systick() {
       |                                                       ^
- (!!)   Icon bootloader/computer.png not found in icon theme omega_trans. Using default!
+CXX     ion/src/device/n0110/drivers/reset.o
 CXX     ion/src/device/n0110/drivers/usb.o
-CXX     ion/src/device/n0110/platform_info.o
 CC      ion/src/device/shared/boot/isr.o
+CXX     ion/src/device/n0110/platform_info.o
+CXX     ion/src/device/shared/drivers/backlight.o
+ (!!)   Icon bootloader/computer.png not found in icon theme omega_trans. Using default!
 <command-line>: warning: "EPSILON_VERSION" redefined
 <command-line>: note: this is the location of the previous definition
 <command-line>: warning: "OMEGA_VERSION" redefined
 <command-line>: note: this is the location of the previous definition
 <command-line>: warning: "UPSILON_VERSION" redefined
 <command-line>: note: this is the location of the previous definition
-CXX     ion/src/device/shared/drivers/backlight.o
 CXX     ion/src/device/shared/drivers/base64.o
 CXX     ion/src/device/shared/drivers/battery.o
 CXX     ion/src/device/shared/drivers/bldata.o
 CXX     ion/src/device/shared/drivers/board.o
-CXX     ion/src/device/shared/drivers/clipboard.o
-CXX     ion/src/device/shared/drivers/console_dummy.o
 ion/src/device/shared/drivers/bldata.cpp: In member function 'Ion::Device::BootloaderSharedData::BootloaderSharedData()':
 ion/src/device/shared/drivers/bldata.cpp:16:9: warning: 'this_4(D)->m_header' is used uninitialized [-Wuninitialized]
    16 |     if (m_header != Magic) {
       |         ^~~~~~~~
+CXX     ion/src/device/shared/drivers/clipboard.o
+CXX     ion/src/device/shared/drivers/console_dummy.o
 CXX     ion/src/device/shared/drivers/crc32.o
 CXX     ion/src/device/shared/drivers/display.o
 CXX     ion/src/device/shared/drivers/events_keyboard_platform.o
@@ -188,16 +188,16 @@ CXX     ion/src/shared/collect_registers.o
 CXX     ion/src/shared/console_line.o
 CXX     ion/src/shared/crc32_eat_byte.o
 CXX     ion/src/shared/decompress.o
-CXX     ion/src/shared/events_keyboard.o
 CXX     ion/src/shared/events.o
+CXX     ion/src/shared/events_keyboard.o
 CXX     ion/src/shared/events_modifier.o
 CXX     ion/src/shared/internal_storage.o
 CXX     ion/src/shared/keyboard/layout_B3/layout_events.o
+CXX     ion/src/shared/rtc.o
 ion/src/shared/internal_storage.cpp: In member function 'int Ion::InternalStorage::numberOfRecords()':
 ion/src/shared/internal_storage.cpp:231:18: warning: unused variable 'name' [-Wunused-variable]
   231 |     const char * name = fullNameOfRecordStarting(p);
       |                  ^~~~
-CXX     ion/src/shared/rtc.o
 CXX     ion/src/shared/stack_position.o
 CXX     ion/src/shared/storage.o
 CXX     ion/src/shared/unicode/utf8_decoder.o
@@ -230,11 +230,11 @@ CC      liba/src/assert.o
 CC      liba/src/bzero.o
 CC      liba/src/ctype.o
 CC      liba/src/errno.o
-CC      liba/src/external/openbsd/b_log__D.o
 CC      liba/src/external/openbsd/b_exp__D.o
+CC      liba/src/external/openbsd/b_log__D.o
 CC      liba/src/external/openbsd/b_tgamma.o
-CC      liba/src/external/openbsd/e_acos.o
 CC      liba/src/external/openbsd/e_acosf.o
+CC      liba/src/external/openbsd/e_acos.o
 CC      liba/src/external/openbsd/e_acosh.o
 CC      liba/src/external/openbsd/e_acoshf.o
 CC      liba/src/external/openbsd/e_asin.o
@@ -291,8 +291,8 @@ CC      liba/src/external/openbsd/s_expm1.o
 CC      liba/src/external/openbsd/s_expm1f.o
 CC      liba/src/external/openbsd/s_fabs.o
 CC      liba/src/external/openbsd/s_fabsf.o
-CC      liba/src/external/openbsd/s_floorf.o
 CC      liba/src/external/openbsd/s_floor.o
+CC      liba/src/external/openbsd/s_floorf.o
 CC      liba/src/external/openbsd/s_fmax.o
 CC      liba/src/external/openbsd/s_fmaxf.o
 CC      liba/src/external/openbsd/s_frexp.o
@@ -385,6 +385,7 @@ In file included from ./apps/rpn/app.h:11,
       |        ^~~~~~~~~~
 CXX     apps/battery_timer.o
 CXX     apps/battery_view.o
+CXX     apps/calculation/additional_outputs/complex_graph_cell.o
 In file included from escher/include/escher.h:59,
                  from ./apps/calculation/calculation.h:5,
                  from ./apps/calculation/calculation_store.h:4,
@@ -399,7 +400,6 @@ In file included from ./apps/reader/read_book_controller.h:6,
 ./apps/reader/word_wrap_view.h:21:8: note:   by 'void Reader::WordWrapTextView::setText(const char*, int, bool)'
    21 |   void setText(const char*, int length, bool isRichTextFile);
       |        ^~~~~~~
-CXX     apps/calculation/additional_outputs/complex_graph_cell.o
 In file included from escher/include/escher.h:59,
                  from ./apps/calculation/calculation.h:5,
                  from ./apps/calculation/calculation_store.h:4,
@@ -563,8 +563,6 @@ In file included from ./apps/rpn/app.h:11,
 CXX     apps/probability/calculation/calculation.o
 CXX     apps/probability/calculation/discrete_calculation.o
 CXX     apps/probability/calculation/finite_integral_calculation.o
-CXX     apps/probability/calculation/left_integral_calculation.o
-CXX     apps/probability/calculation/right_integral_calculation.o
 In file included from escher/include/escher.h:59,
                  from ./apps/calculation/calculation.h:5,
                  from ./apps/calculation/calculation_store.h:4,
@@ -579,6 +577,8 @@ In file included from ./apps/reader/read_book_controller.h:6,
 ./apps/reader/word_wrap_view.h:21:8: note:   by 'void Reader::WordWrapTextView::setText(const char*, int, bool)'
    21 |   void setText(const char*, int length, bool isRichTextFile);
       |        ^~~~~~~
+CXX     apps/probability/calculation/left_integral_calculation.o
+CXX     apps/probability/calculation/right_integral_calculation.o
 CXX     apps/probability/calculation_cell.o
 CXX     apps/probability/images/calcul1_icon.o
 CXX     apps/probability/images/calcul2_icon.o
@@ -596,8 +596,8 @@ CXX     apps/probability/distribution/exponential_distribution.o
 CXX     apps/probability/distribution/fisher_distribution.o
 CXX     apps/probability/distribution/geometric_distribution.o
 CXX     apps/probability/distribution/helper.o
-CXX     apps/probability/distribution/hypergeometric_function.o
 CXX     apps/probability/distribution/normal_distribution.o
+CXX     apps/probability/distribution/hypergeometric_function.o
 CXX     apps/probability/distribution/poisson_distribution.o
 CXX     apps/probability/distribution/regularized_gamma.o
 CXX     apps/probability/distribution/student_distribution.o
@@ -605,8 +605,8 @@ CXX     apps/probability/distribution/two_parameter_distribution.o
 CXX     apps/probability/distribution/uniform_distribution.o
 CXX     apps/probability/images/binomial_icon.o
 CXX     apps/probability/images/chi_squared_icon.o
-CXX     apps/probability/images/exponential_icon.o
 CXX     apps/probability/images/fisher_icon.o
+CXX     apps/probability/images/exponential_icon.o
 CXX     apps/probability/images/focused_binomial_icon.o
 CXX     apps/probability/images/focused_chi_squared_icon.o
 CXX     apps/probability/images/focused_exponential_icon.o
@@ -625,8 +625,8 @@ CXX     apps/probability/distribution_curve_view.o
 CXX     apps/probability/image_cell.o
 CXX     apps/probability/parameters_controller.o
 CXX     apps/probability/responder_image_cell.o
-CXX     apps/reader/reader_icon.o
 CXX     apps/reader/list_book_controller.o
+CXX     apps/reader/reader_icon.o
 CXX     apps/reader/read_book_controller.o
 CXX     apps/reader/tex_parser.o
 CXX     apps/reader/utility.o
@@ -731,6 +731,7 @@ In file included from apps/rpn/app.h:11:
 apps/rpn/rpn_toolbox.h:17:8: note:   by 'bool Rpn::Toolbox::selectLeaf(int)'
    17 |   bool selectLeaf(int selectedRow);
       |        ^~~~~~~~~~
+CXX     apps/sequence/graph/curve_view_range.o
 In file included from apps/rpn/rpn_toolbox.h:6,
                  from apps/rpn/rpn_toolbox.cpp:1:
 ./apps/math_toolbox.h:12:8: warning: 'virtual bool MathToolbox::selectLeaf(int, bool)' was hidden [-Woverloaded-virtual=]
@@ -739,7 +740,6 @@ In file included from apps/rpn/rpn_toolbox.h:6,
 apps/rpn/rpn_toolbox.h:17:8: note:   by 'bool Rpn::Toolbox::selectLeaf(int)'
    17 |   bool selectLeaf(int selectedRow);
       |        ^~~~~~~~~~
-CXX     apps/sequence/graph/curve_view_range.o
 CXX     apps/sequence/graph/go_to_parameter_controller.o
 CXX     apps/sequence/graph/graph_controller.o
 CXX     apps/sequence/graph/graph_view.o
@@ -776,11 +776,11 @@ CXX     apps/settings/sub_menu/about_controller_non_official.o
 CXX     apps/settings/sub_menu/accessibility_controller.o
 CXX     apps/settings/sub_menu/brightness_controller.o
 CXX     apps/settings/sub_menu/code_options_controller.o
-CXX     apps/settings/sub_menu/contributors_controller.o
 apps/settings/sub_menu/about_controller_non_official.cpp: In member function 'virtual void Settings::AboutController::viewWillAppear()':
 apps/settings/sub_menu/about_controller_non_official.cpp:10:17: warning: unused variable 'cautionMessages' [-Wunused-variable]
    10 |   I18n::Message cautionMessages[] = {I18n::Message::AboutWarning1, I18n::Message::AboutWarning2, I18n::Message::AboutWarning3, I18n::Message::AboutWarning4};
       |                 ^~~~~~~~~~~~~~~
+CXX     apps/settings/sub_menu/contributors_controller.o
 CXX     apps/settings/sub_menu/datetime_controller.o
 CXX     apps/settings/sub_menu/display_mode_controller.o
 CXX     apps/settings/sub_menu/exam_mode_controller.o
@@ -856,11 +856,11 @@ CXX     apps/shared/post_and_hardware_tests.o
 CXX     apps/shared/range_1D.o
 CXX     apps/shared/range_parameter_controller.o
 CXX     apps/shared/regular_table_view_data_source.o
-CXX     apps/shared/round_cursor_view.o
 apps/shared/list_parameter_controller.cpp: In member function 'virtual void Shared::ListParameterController::willDisplayCellForIndex(HighlightCell*, int)':
 apps/shared/list_parameter_controller.cpp:44:22: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'unsigned int'} [-Wsign-compare]
    44 |     for(int i = 0; i < Palette::numberOfDataColors(); i++) {
       |                    ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CXX     apps/shared/round_cursor_view.o
 CXX     apps/shared/scrollable_multiple_expressions_view.o
 CXX     apps/shared/scrollable_two_expressions_cell.o
 CXX     apps/shared/separable.o
@@ -1043,8 +1043,8 @@ CXX     poincare/src/arithmetic.o
 CXX     poincare/src/based_integer.o
 CXX     poincare/src/beta_function.o
 CXX     poincare/src/binom_cdf.o
-CXX     poincare/src/binom_pdf.o
 CXX     poincare/src/binomial_coefficient.o
+CXX     poincare/src/binom_pdf.o
 CXX     poincare/src/binomial_coefficient_layout.o
 CXX     poincare/src/binomial_distribution.o
 CXX     poincare/src/binomial_distribution_function.o
@@ -1197,11 +1197,11 @@ CC      python/port/mod/kandinsky/modkandinsky_table.o
 CXX     python/port/mod/matplotlib/modmatplotlib.o
 CC      python/port/mod/matplotlib/modmatplotlib_table.o
 CXX     python/port/mod/matplotlib/pyplot/modpyplot.o
+CC      python/port/mod/matplotlib/pyplot/modpyplot_table.o
 python/port/mod/kandinsky/modkandinsky.cpp: In function 'void* modkandinsky_fill_polygon(size_t, void* const*)':
 python/port/mod/kandinsky/modkandinsky.cpp:158:17: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'unsigned int'} [-Wsign-compare]
   158 |   for(int i=0; i<itemLength; i++) {
       |                ~^~~~~~~~~~~
-CC      python/port/mod/matplotlib/pyplot/modpyplot_table.o
 CXX     python/port/mod/matplotlib/pyplot/plot_controller.o
 CXX     python/port/mod/matplotlib/pyplot/plot_store.o
 CXX     python/port/mod/matplotlib/pyplot/plot_view.o
@@ -1234,8 +1234,8 @@ CC      python/port/mod/ulab/scipy/optimize/optimize.o
 CC      python/port/mod/ulab/scipy/scipy.o
 CC      python/port/mod/ulab/scipy/signal/signal.o
 CC      python/port/mod/ulab/scipy/special/special.o
-CC      python/port/mod/ulab/ulab_create.o
 CC      python/port/mod/ulab/ulab.o
+CC      python/port/mod/ulab/ulab_create.o
 CC      python/port/mod/ulab/ulab_tools.o
 CC      python/port/mod/ulab/user/user.o
 CC      python/port/mod/ulab/utils/utils.o
@@ -1306,8 +1306,8 @@ CC      python/src/py/nlrsetjmp.o
 CC      python/src/py/nlrthumb.o
 CC      python/src/py/nlrx64.o
 CC      python/src/py/nlrx86.o
-CC      python/src/py/obj.o
 CC      python/src/py/nlrxtensa.o
+CC      python/src/py/obj.o
 CC      python/src/py/objarray.o
 CC      python/src/py/objattrtuple.o
 CC      python/src/py/objbool.o
@@ -1399,7 +1399,6 @@ apps/reader/word_wrap_view.h:21:8: note:   by 'void Reader::WordWrapTextView::se
 CXX     apps/sequence/app.o
 CXX     apps/settings/app.o
 CXX     apps/solver/app.o
-CXX     apps/statistics/app.o
 In file included from apps/rpn/../shared/../apps_container.h:10,
                  from apps/rpn/../shared/text_field_delegate_app.h:8,
                  from apps/rpn/app.h:6,
@@ -1411,6 +1410,7 @@ In file included from apps/rpn/app.h:11:
 apps/rpn/rpn_toolbox.h:17:8: note:   by 'bool Rpn::Toolbox::selectLeaf(int)'
    17 |   bool selectLeaf(int selectedRow);
       |        ^~~~~~~~~~
+CXX     apps/statistics/app.o
 CXX     bootloader/computer.o
 OBJCOPY ion/src/device/shared/usb/dfu.bin
 OBJCOPY ion/src/device/shared/usb/dfu.o
@@ -1432,4 +1432,4 @@ binpack/epsilon.onboarding.internal.bin
 binpack/epsilon.onboarding.internal.bin.sha256
 binpack/flasher.light.bin
 binpack/flasher.light.bin.sha256
-Compilation end: Sat Sep 13 03:59:49 PM CEST 2025
+Compilation end: Sat Sep 20 03:18:15 PM CEST 2025

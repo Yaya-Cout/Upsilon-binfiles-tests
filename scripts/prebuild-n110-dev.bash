@@ -19,11 +19,11 @@ make -j8  &>> binpacks/n110/bl.log
 echo Compilation end: $(date) >> binpacks/n110/bl.log
 
 echo Compilation start: $(date) > binpacks/n110/flasher.light.log
-make flasher.light.bin MODEL=n0100 -j8 &> binpacks/n100/flasher.light.log
+make -j8 flasher.light.bin MODEL=n0100 &> binpacks/n100/flasher.light.log
 echo Compilation end: $(date) > binpacks/n110/flasher.light.log
 
 echo Compilation start: $(date) > binpacks/n110/flasher.verbose.log
-make flasher.verbose.bin MODEL=n0100 -j8 &> binpacks/n100/flasher.verbose.log
+make -j8 flasher.verbose.bin MODEL=n0100 &> binpacks/n100/flasher.verbose.log
 echo Compilation end: $(date) > binpacks/n110/flasher.verbose.log
 
 
