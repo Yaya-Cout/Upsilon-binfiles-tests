@@ -18,8 +18,11 @@ CXX     bootloader/recovery.o
 CXX     bootloader/trampoline.o
 CXX     bootloader/usb_data.o
 CXX     bootloader/utility.o
-CXX     bootloader/drivers/stm32_drivers.o
-CXX     bootloader/interface/menus/about.o
+CC      bootloader/boot/isr.o
+CXX     bootloader/boot/rt0.o
+CXX     bootloader/drivers/board.o
+CXX     ion/src/device/bootloader/usb/calculator.o
+CXX     ion/src/device/bootloader/drivers/usb_desc.o
 In file included from ./bootloader/interface/menus/home.h:4,
                  from bootloader/boot.cpp:7:
 ./bootloader/interface/src/menu.h: In constructor 'Bootloader::Menu::Menu(KDColor, KDColor, const char*, const char*, bool, int)':
@@ -44,35 +47,6 @@ In file included from ./bootloader/interface/menus/home.h:4,
 ./bootloader/interface/src/menu.h:16:14: warning: pure virtual 'virtual void Bootloader::Menu::setup()' called from constructor
    16 |         setup();
       |         ~~~~~^~
-CXX     bootloader/interface/menus/crash.o
-CXX     bootloader/interface/menus/dfu.o
-CXX     bootloader/interface/menus/home.o
-In file included from bootloader/interface/menus/about.h:4,
-                 from bootloader/interface/menus/about.cpp:1:
-./bootloader/interface/src/menu.h: In constructor 'Bootloader::Menu::Menu(KDColor, KDColor, const char*, const char*, bool, int)':
-./bootloader/interface/src/menu.h:117:20: warning: 'Bootloader::Menu::m_title' will be initialized after [-Wreorder]
-  117 |       const char * m_title;
-      |                    ^~~~~~~
-./bootloader/interface/src/menu.h:116:15: warning:   'KDColor Bootloader::Menu::m_foreground' [-Wreorder]
-  116 |       KDColor m_foreground;
-      |               ^~~~~~~~~~~~
-./bootloader/interface/src/menu.h:15:7: warning:   when initialized here [-Wreorder]
-   15 |       Menu(KDColor foreground, KDColor background, const char * title, const char * bottom, bool centerY, int margin) : m_columns(), m_defaultColumns(), m_slotColumns(), m_background(background), m_title(title), m_foreground(foreground), m_bottom(bottom), m_centerY(centerY), m_forced_exit(false), m_margin(margin) {
-      |       ^~~~
-./bootloader/interface/src/menu.h:122:12: warning: 'Bootloader::Menu::m_forced_exit' will be initialized after [-Wreorder]
-  122 |       bool m_forced_exit;
-      |            ^~~~~~~~~~~~~
-./bootloader/interface/src/menu.h:120:11: warning:   'int Bootloader::Menu::m_margin' [-Wreorder]
-  120 |       int m_margin;
-      |           ^~~~~~~~
-./bootloader/interface/src/menu.h:15:7: warning:   when initialized here [-Wreorder]
-   15 |       Menu(KDColor foreground, KDColor background, const char * title, const char * bottom, bool centerY, int margin) : m_columns(), m_defaultColumns(), m_slotColumns(), m_background(background), m_title(title), m_foreground(foreground), m_bottom(bottom), m_centerY(centerY), m_forced_exit(false), m_margin(margin) {
-      |       ^~~~
-./bootloader/interface/src/menu.h:16:14: warning: pure virtual 'virtual void Bootloader::Menu::setup()' called from constructor
-   16 |         setup();
-      |         ~~~~~^~
-CXX     bootloader/interface/menus/installer.o
-CXX     bootloader/interface/menus/slot_recovery.o
 In file included from ./bootloader/interface/menus/slot_recovery.h:4,
                  from bootloader/recovery.cpp:12:
 ./bootloader/interface/src/menu.h: In constructor 'Bootloader::Menu::Menu(KDColor, KDColor, const char*, const char*, bool, int)':
@@ -97,14 +71,59 @@ In file included from ./bootloader/interface/menus/slot_recovery.h:4,
 ./bootloader/interface/src/menu.h:16:14: warning: pure virtual 'virtual void Bootloader::Menu::setup()' called from constructor
    16 |         setup();
       |         ~~~~~^~
+CXX     ion/src/device/bootloader/usb/dfu_interface.o
 bootloader/recovery.cpp: In static member function 'static Bootloader::Recovery::CrashedSlot Bootloader::Recovery::getSlotConcerned()':
 bootloader/recovery.cpp:55:8: warning: variable 'isBCrashed' set but not used [-Wunused-but-set-variable]
    55 |   bool isBCrashed = false;
       |        ^~~~~~~~~~
+CXX     ion/src/device/bootloader/usb/dfu_xip.o
 bootloader/boot.cpp: In static member function 'static void Bootloader::Boot::jumpToInternalBootloader()':
 bootloader/boot.cpp:171:1: warning: 'noreturn' function does return
   171 | }
       | ^
+CXX     ion/src/device/bootloader/usb/stack/descriptor/bos_descriptor.o
+ion/src/device/bootloader/usb/dfu_interface.cpp: In member function 'void Ion::Device::USB::DFUInterface::eraseMemoryIfNeeded()':
+ion/src/device/bootloader/usb/dfu_interface.cpp:214:31: warning: variable 'config' set but not used [-Wunused-but-set-variable]
+  214 |   Bootloader::ProtectionState config = getDfuConfig();
+      |                               ^~~~~~
+ion/src/device/bootloader/usb/dfu_interface.cpp: In member function 'void Ion::Device::USB::DFUInterface::writeOnMemory()':
+ion/src/device/bootloader/usb/dfu_interface.cpp:236:33: warning: variable 'config' set but not used [-Wunused-but-set-variable]
+  236 |     Bootloader::ProtectionState config = getDfuConfig();
+      |                                 ^~~~~~
+CXX     ion/src/device/bootloader/usb/stack/descriptor/configuration_descriptor.o
+CXX     ion/src/device/bootloader/usb/stack/descriptor/descriptor.o
+CXX     ion/src/device/bootloader/usb/stack/descriptor/device_capability_descriptor.o
+CXX     ion/src/device/bootloader/usb/stack/descriptor/device_descriptor.o
+CXX     ion/src/device/bootloader/usb/stack/descriptor/dfu_functional_descriptor.o
+CXX     ion/src/device/bootloader/usb/stack/descriptor/extended_compat_id_descriptor.o
+CXX     ion/src/device/bootloader/usb/stack/descriptor/interface_descriptor.o
+CXX     ion/src/device/bootloader/usb/stack/descriptor/language_id_string_descriptor.o
+CXX     ion/src/device/bootloader/usb/stack/descriptor/microsoft_os_string_descriptor.o
+CXX     ion/src/device/bootloader/usb/stack/descriptor/platform_device_capability_descriptor.o
+CXX     ion/src/device/bootloader/usb/stack/descriptor/string_descriptor.o
+CXX     ion/src/device/bootloader/usb/stack/descriptor/url_descriptor.o
+CXX     ion/src/device/bootloader/usb/stack/descriptor/webusb_platform_descriptor.o
+CXX     ion/src/device/bootloader/usb/stack/device.o
+bootloader/boot/rt0.cpp:34:55: warning: FP registers might be clobbered despite 'interrupt' attribute: compile with '-mgeneral-regs-only' [-Wattributes]
+   34 | void __attribute__((interrupt, noinline)) isr_systick() {
+      |                                                       ^
+CXX     ion/src/device/bootloader/usb/stack/endpoint0.o
+CXX     ion/src/device/bootloader/usb/stack/interface.o
+CXX     ion/src/device/bootloader/usb/stack/request_recipient.o
+CXX     ion/src/device/bootloader/usb/stack/setup_packet.o
+CXX     ion/src/device/bootloader/usb/stack/streamable.o
+CXX     bootloader/drivers/stm32_drivers.o
+CXX     bootloader/interface/menus/about.o
+CXX     bootloader/interface/menus/crash.o
+CXX     bootloader/interface/menus/dfu.o
+CXX     bootloader/interface/menus/home.o
+CXX     bootloader/interface/menus/installer.o
+In file included from bootloader/interface/menus/about.h:4,
+                 from bootloader/interface/menus/about.cpp:1:
+./bootloader/interface/src/menu.h: In constructor 'Bootloader::Menu::Menu(KDColor, KDColor, const char*, const char*, bool, int)':
+./bootloader/interface/src/menu.h:117:20: warning: 'Bootloader::Menu::m_title' will be initialized after [-Wreorder]
+  117 |       const char * m_title;
+      |                    ^~~~~~~
 In file included from bootloader/interface/menus/crash.h:4,
                  from bootloader/interface/menus/crash.cpp:1:
 ./bootloader/interface/src/menu.h: In constructor 'Bootloader::Menu::Menu(KDColor, KDColor, const char*, const char*, bool, int)':
@@ -114,18 +133,36 @@ In file included from bootloader/interface/menus/crash.h:4,
 ./bootloader/interface/src/menu.h:116:15: warning:   'KDColor Bootloader::Menu::m_foreground' [-Wreorder]
   116 |       KDColor m_foreground;
       |               ^~~~~~~~~~~~
+./bootloader/interface/src/menu.h:116:15: warning:   'KDColor Bootloader::Menu::m_foreground' [-Wreorder]
+  116 |       KDColor m_foreground;
+      |               ^~~~~~~~~~~~
+./bootloader/interface/src/menu.h:15:7: warning:   when initialized here [-Wreorder]
+   15 |       Menu(KDColor foreground, KDColor background, const char * title, const char * bottom, bool centerY, int margin) : m_columns(), m_defaultColumns(), m_slotColumns(), m_background(background), m_title(title), m_foreground(foreground), m_bottom(bottom), m_centerY(centerY), m_forced_exit(false), m_margin(margin) {
+      |       ^~~~
 ./bootloader/interface/src/menu.h:15:7: warning:   when initialized here [-Wreorder]
    15 |       Menu(KDColor foreground, KDColor background, const char * title, const char * bottom, bool centerY, int margin) : m_columns(), m_defaultColumns(), m_slotColumns(), m_background(background), m_title(title), m_foreground(foreground), m_bottom(bottom), m_centerY(centerY), m_forced_exit(false), m_margin(margin) {
       |       ^~~~
 ./bootloader/interface/src/menu.h:122:12: warning: 'Bootloader::Menu::m_forced_exit' will be initialized after [-Wreorder]
   122 |       bool m_forced_exit;
       |            ^~~~~~~~~~~~~
+./bootloader/interface/src/menu.h:122:12: warning: 'Bootloader::Menu::m_forced_exit' will be initialized after [-Wreorder]
+  122 |       bool m_forced_exit;
+      |            ^~~~~~~~~~~~~
+./bootloader/interface/src/menu.h:120:11: warning:   'int Bootloader::Menu::m_margin' [-Wreorder]
+  120 |       int m_margin;
+      |           ^~~~~~~~
 ./bootloader/interface/src/menu.h:120:11: warning:   'int Bootloader::Menu::m_margin' [-Wreorder]
   120 |       int m_margin;
       |           ^~~~~~~~
 ./bootloader/interface/src/menu.h:15:7: warning:   when initialized here [-Wreorder]
    15 |       Menu(KDColor foreground, KDColor background, const char * title, const char * bottom, bool centerY, int margin) : m_columns(), m_defaultColumns(), m_slotColumns(), m_background(background), m_title(title), m_foreground(foreground), m_bottom(bottom), m_centerY(centerY), m_forced_exit(false), m_margin(margin) {
       |       ^~~~
+./bootloader/interface/src/menu.h:15:7: warning:   when initialized here [-Wreorder]
+   15 |       Menu(KDColor foreground, KDColor background, const char * title, const char * bottom, bool centerY, int margin) : m_columns(), m_defaultColumns(), m_slotColumns(), m_background(background), m_title(title), m_foreground(foreground), m_bottom(bottom), m_centerY(centerY), m_forced_exit(false), m_margin(margin) {
+      |       ^~~~
+./bootloader/interface/src/menu.h:16:14: warning: pure virtual 'virtual void Bootloader::Menu::setup()' called from constructor
+   16 |         setup();
+      |         ~~~~~^~
 ./bootloader/interface/src/menu.h:16:14: warning: pure virtual 'virtual void Bootloader::Menu::setup()' called from constructor
    16 |         setup();
       |         ~~~~~^~
@@ -153,7 +190,6 @@ In file included from bootloader/interface/menus/dfu.h:4,
 ./bootloader/interface/src/menu.h:16:14: warning: pure virtual 'virtual void Bootloader::Menu::setup()' called from constructor
    16 |         setup();
       |         ~~~~~^~
-CXX     bootloader/interface/menus/upsilon_recovery.o
 In file included from bootloader/interface/menus/home.h:4,
                  from bootloader/interface/menus/home.cpp:1:
 ./bootloader/interface/src/menu.h: In constructor 'Bootloader::Menu::Menu(KDColor, KDColor, const char*, const char*, bool, int)':
@@ -202,7 +238,10 @@ In file included from bootloader/interface/menus/installer.h:4,
 ./bootloader/interface/src/menu.h:16:14: warning: pure virtual 'virtual void Bootloader::Menu::setup()' called from constructor
    16 |         setup();
       |         ~~~~~^~
+CXX     bootloader/interface/menus/slot_recovery.o
+CXX     bootloader/interface/menus/upsilon_recovery.o
 CXX     bootloader/interface/menus/warning.o
+CXX     bootloader/interface/src/menu.o
 In file included from bootloader/interface/menus/slot_recovery.h:4,
                  from bootloader/interface/menus/slot_recovery.cpp:1:
 ./bootloader/interface/src/menu.h: In constructor 'Bootloader::Menu::Menu(KDColor, KDColor, const char*, const char*, bool, int)':
@@ -227,8 +266,6 @@ In file included from bootloader/interface/menus/slot_recovery.h:4,
 ./bootloader/interface/src/menu.h:16:14: warning: pure virtual 'virtual void Bootloader::Menu::setup()' called from constructor
    16 |         setup();
       |         ~~~~~^~
-CXX     bootloader/interface/src/menu.o
-CXX     bootloader/interface/static/interface.o
 In file included from bootloader/interface/menus/upsilon_recovery.h:4,
                  from bootloader/interface/menus/upsilon_recovery.cpp:1:
 ./bootloader/interface/src/menu.h: In constructor 'Bootloader::Menu::Menu(KDColor, KDColor, const char*, const char*, bool, int)':
@@ -253,6 +290,7 @@ In file included from bootloader/interface/menus/upsilon_recovery.h:4,
 ./bootloader/interface/src/menu.h:16:14: warning: pure virtual 'virtual void Bootloader::Menu::setup()' called from constructor
    16 |         setup();
       |         ~~~~~^~
+CXX     bootloader/interface/static/interface.o
 CXX     bootloader/slots/kernel_header.o
 In file included from bootloader/interface/menus/warning.h:4,
                  from bootloader/interface/menus/warning.cpp:1:
@@ -278,7 +316,6 @@ In file included from bootloader/interface/menus/warning.h:4,
 ./bootloader/interface/src/menu.h:16:14: warning: pure virtual 'virtual void Bootloader::Menu::setup()' called from constructor
    16 |         setup();
       |         ~~~~~^~
-CXX     bootloader/slots/slot_exam_mode.o
 CXX     bootloader/slots/slot.o
 In file included from bootloader/interface/src/menu.cpp:1:
 ./bootloader/interface/src/menu.h: In constructor 'Bootloader::Menu::Menu(KDColor, KDColor, const char*, const char*, bool, int)':
@@ -303,6 +340,7 @@ In file included from bootloader/interface/src/menu.cpp:1:
 ./bootloader/interface/src/menu.h:16:14: warning: pure virtual 'virtual void Bootloader::Menu::setup()' called from constructor
    16 |         setup();
       |         ~~~~~^~
+CXX     bootloader/slots/slot_exam_mode.o
 CXX     bootloader/slots/userland_header.o
 bootloader/slots/slot_exam_mode.cpp: In static member function 'static uint8_t Bootloader::ExamMode::SlotsExamMode::FetchSlotExamMode(const char*, const char*)':
 bootloader/slots/slot_exam_mode.cpp:47:12: warning: comparison with string literal results in unspecified behavior [-Waddress]

@@ -25,8 +25,8 @@ CXX     ion/src/device/n0100/drivers/board.o
 CXX     ion/src/device/n0100/drivers/external_flash.o
 CXX     ion/src/device/n0100/drivers/led.o
 CXX     ion/src/device/n0100/drivers/power.o
-CXX     ion/src/device/n0100/drivers/usb.o
 CXX     ion/src/device/n0100/drivers/reset.o
+CXX     ion/src/device/n0100/drivers/usb.o
 CXX     ion/src/device/n0100/platform_info.o
 <command-line>: warning: "EPSILON_VERSION" redefined
 <command-line>: note: this is the location of the previous definition
@@ -36,21 +36,21 @@ CXX     ion/src/device/n0100/platform_info.o
 <command-line>: note: this is the location of the previous definition
 CC      ion/src/device/shared/boot/isr.o
 CXX     ion/src/device/shared/drivers/backlight.o
+CXX     ion/src/device/shared/drivers/base64.o
 ion/src/device/n0100/boot/rt0.cpp:122:55: warning: FP registers might be clobbered despite 'interrupt' attribute: compile with '-mgeneral-regs-only' [-Wattributes]
   122 | void __attribute__((interrupt, noinline)) isr_systick() {
       |                                                       ^
-CXX     ion/src/device/shared/drivers/base64.o
 CXX     ion/src/device/shared/drivers/battery.o
 CXX     ion/src/device/shared/drivers/bldata.o
 CXX     ion/src/device/shared/drivers/board.o
 CXX     ion/src/device/shared/drivers/clipboard.o
 CXX     ion/src/device/shared/drivers/console_dummy.o
-CXX     ion/src/device/shared/drivers/crc32.o
-CXX     ion/src/device/shared/drivers/display.o
 ion/src/device/shared/drivers/bldata.cpp: In member function 'Ion::Device::BootloaderSharedData::BootloaderSharedData()':
 ion/src/device/shared/drivers/bldata.cpp:16:9: warning: 'this_4(D)->m_header' is used uninitialized [-Wuninitialized]
    16 |     if (m_header != Magic) {
       |         ^~~~~~~~
+CXX     ion/src/device/shared/drivers/crc32.o
+CXX     ion/src/device/shared/drivers/display.o
 CXX     ion/src/device/shared/drivers/events_keyboard_platform.o
 CXX     ion/src/device/shared/drivers/exam_mode.o
 CXX     ion/src/device/shared/drivers/flash.o
@@ -92,8 +92,8 @@ CXX     ion/src/device/shared/usb/stack/endpoint0.o
 CXX     ion/src/device/shared/usb/stack/interface.o
 CXX     ion/src/device/shared/usb/stack/request_recipient.o
 CXX     ion/src/device/shared/usb/stack/setup_packet.o
-CC      ion/src/external/lz4/lz4.o
 CXX     ion/src/device/shared/usb/stack/streamable.o
+CC      ion/src/external/lz4/lz4.o
 CXX     ion/src/shared/collect_registers.o
 CXX     ion/src/shared/console_line.o
 CXX     ion/src/shared/crc32_eat_byte.o
@@ -103,12 +103,12 @@ CXX     ion/src/shared/events_keyboard.o
 CXX     ion/src/shared/events_modifier.o
 CXX     ion/src/shared/internal_storage.o
 CXX     ion/src/shared/keyboard/layout_B2/layout_events.o
+CXX     ion/src/shared/rtc.o
+CXX     ion/src/shared/stack_position.o
 ion/src/shared/internal_storage.cpp: In member function 'int Ion::InternalStorage::numberOfRecords()':
 ion/src/shared/internal_storage.cpp:231:18: warning: unused variable 'name' [-Wunused-variable]
   231 |     const char * name = fullNameOfRecordStarting(p);
       |                  ^~~~
-CXX     ion/src/shared/rtc.o
-CXX     ion/src/shared/stack_position.o
 CXX     ion/src/shared/storage.o
 CXX     ion/src/shared/unicode/utf8_decoder.o
 CXX     ion/src/shared/unicode/utf8_helper.o
@@ -163,11 +163,11 @@ CC      liba/src/external/openbsd/e_lgamma_r.o
 CC      liba/src/external/openbsd/e_lgammaf_r.o
 CC      liba/src/external/openbsd/e_log.o
 CC      liba/src/external/openbsd/e_log10.o
-CC      liba/src/external/openbsd/e_log2.o
 CC      liba/src/external/openbsd/e_log10f.o
+CC      liba/src/external/openbsd/e_log2.o
 CC      liba/src/external/openbsd/e_logf.o
-CC      liba/src/external/openbsd/e_pow.o
 CC      liba/src/external/openbsd/e_powf.o
+CC      liba/src/external/openbsd/e_pow.o
 CC      liba/src/external/openbsd/e_rem_pio2.o
 CC      liba/src/external/openbsd/e_rem_pio2f.o
 CC      liba/src/external/openbsd/e_scalb.o
@@ -193,8 +193,8 @@ CC      liba/src/external/openbsd/s_copysign.o
 CC      liba/src/external/openbsd/s_copysignf.o
 CC      liba/src/external/openbsd/s_cos.o
 CC      liba/src/external/openbsd/s_cosf.o
-CC      liba/src/external/openbsd/s_erf.o
 CC      liba/src/external/openbsd/s_erff.o
+CC      liba/src/external/openbsd/s_erf.o
 CC      liba/src/external/openbsd/s_expm1.o
 CC      liba/src/external/openbsd/s_expm1f.o
 CC      liba/src/external/openbsd/s_fabs.o
@@ -229,21 +229,21 @@ CC      liba/src/external/openbsd/s_trunc.o
 CC      liba/src/external/openbsd/s_truncf.o
 CC      liba/src/external/openbsd/w_lgamma.o
 CC      liba/src/external/openbsd/w_lgammaf.o
-CC      liba/src/fpclassify.o
 CC      liba/src/external/sqlite/mem5.o
+CC      liba/src/fpclassify.o
 CC      liba/src/fpclassifyf.o
 CC      liba/src/ieee754.o
 CC      liba/src/itoa.o
 CC      liba/src/malloc.o
-CC      liba/src/memcpy.o
 CC      liba/src/memcmp.o
+CC      liba/src/memcpy.o
 CC      liba/src/memmove.o
 CC      liba/src/memset.o
 CC      liba/src/nearbyint.o
 CC      liba/src/nearbyintf.o
 CC      liba/src/strchr.o
-CC      liba/src/strlcat.o
 CC      liba/src/strcmp.o
+CC      liba/src/strlcat.o
 CC      liba/src/strlcpy.o
 CC      liba/src/strlen.o
 RASTER  kandinsky/fonts/LargeFontSimple.cpp

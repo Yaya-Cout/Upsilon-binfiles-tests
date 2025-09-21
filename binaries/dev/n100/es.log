@@ -14,7 +14,6 @@
 Makefile:17: reader app included, removing it on n0100. 
 Makefile:25: Removing uLab on n0100. 
 Makefile:53: HOME_DISPLAY_EXTERNALS is set but external isn't included, ignoring flag.
-I18N    apps/i18n.cpp
 CXX     apps/alternate_empty_nested_menu_controller.o
 CXX     apps/apps_container.o
 CXX     apps/apps_container_launch_on_boarding.o
@@ -44,7 +43,6 @@ In file included from ./apps/rpn/app.h:11,
 ./apps/rpn/rpn_toolbox.h:17:8: note:   by 'bool Rpn::Toolbox::selectLeaf(int)'
    17 |   bool selectLeaf(int selectedRow);
       |        ^~~~~~~~~~
-CXX     apps/battery_timer.o
 In file included from ./apps/calculation/../shared/../apps_container.h:10,
                  from ./apps/calculation/../shared/text_field_delegate_app.h:8,
                  from ./apps/calculation/../shared/text_field_delegate.h:4,
@@ -59,16 +57,17 @@ In file included from ./apps/rpn/app.h:11,
 ./apps/rpn/rpn_toolbox.h:17:8: note:   by 'bool Rpn::Toolbox::selectLeaf(int)'
    17 |   bool selectLeaf(int selectedRow);
       |        ^~~~~~~~~~
+CXX     apps/battery_timer.o
 CXX     apps/battery_view.o
 CXX     apps/calculation/additional_outputs/complex_graph_cell.o
 CXX     apps/calculation/additional_outputs/complex_list_controller.o
 CXX     apps/calculation/additional_outputs/complex_model.o
 CXX     apps/calculation/additional_outputs/expression_with_equal_sign_view.o
-CXX     apps/calculation/additional_outputs/expressions_list_controller.o
 apps/atomic/list_controller.cpp: In member function 'virtual int Atomic::ListController::reusableCellCount(int)':
 apps/atomic/list_controller.cpp:116:5: warning: control reaches end of non-void function [-Wreturn-type]
   116 |     default:
       |     ^~~~~~~
+CXX     apps/calculation/additional_outputs/expressions_list_controller.o
 CXX     apps/calculation/additional_outputs/illustrated_list_controller.o
 CXX     apps/calculation/additional_outputs/illustration_cell.o
 CXX     apps/calculation/additional_outputs/integer_list_controller.o
@@ -298,7 +297,16 @@ apps/rpn/rpn_toolbox.h:17:8: note:   by 'bool Rpn::Toolbox::selectLeaf(int)'
       |        ^~~~~~~~~~
 CXX     apps/sequence/graph/curve_parameter_controller.o
 CXX     apps/sequence/graph/curve_view_range.o
+In file included from apps/rpn/rpn_toolbox.h:6,
+                 from apps/rpn/rpn_toolbox.cpp:1:
+./apps/math_toolbox.h:12:8: warning: 'virtual bool MathToolbox::selectLeaf(int, bool)' was hidden [-Woverloaded-virtual=]
+   12 |   bool selectLeaf(int selectedRow, bool quitToolbox) override;
+      |        ^~~~~~~~~~
+apps/rpn/rpn_toolbox.h:17:8: note:   by 'bool Rpn::Toolbox::selectLeaf(int)'
+   17 |   bool selectLeaf(int selectedRow);
+      |        ^~~~~~~~~~
 CXX     apps/sequence/graph/go_to_parameter_controller.o
+CXX     apps/sequence/graph/graph_controller.o
 In file included from apps/rpn/../shared/../apps_container.h:10,
                  from apps/rpn/../shared/text_field_delegate_app.h:8,
                  from apps/rpn/app.h:6,
@@ -307,15 +315,6 @@ apps/rpn/../shared/../math_toolbox.h:12:8: warning: 'virtual bool MathToolbox::s
    12 |   bool selectLeaf(int selectedRow, bool quitToolbox) override;
       |        ^~~~~~~~~~
 In file included from apps/rpn/app.h:11:
-apps/rpn/rpn_toolbox.h:17:8: note:   by 'bool Rpn::Toolbox::selectLeaf(int)'
-   17 |   bool selectLeaf(int selectedRow);
-      |        ^~~~~~~~~~
-CXX     apps/sequence/graph/graph_controller.o
-In file included from apps/rpn/rpn_toolbox.h:6,
-                 from apps/rpn/rpn_toolbox.cpp:1:
-./apps/math_toolbox.h:12:8: warning: 'virtual bool MathToolbox::selectLeaf(int, bool)' was hidden [-Woverloaded-virtual=]
-   12 |   bool selectLeaf(int selectedRow, bool quitToolbox) override;
-      |        ^~~~~~~~~~
 apps/rpn/rpn_toolbox.h:17:8: note:   by 'bool Rpn::Toolbox::selectLeaf(int)'
    17 |   bool selectLeaf(int selectedRow);
       |        ^~~~~~~~~~
@@ -330,12 +329,12 @@ apps/rpn/rpn_stack.cpp:161:35: warning: moving a temporary object prevents copy 
   161 |       return doOperation(std::move(specialOperators[i].op(*this)), *context, specialOperators[i].nargs);
       |                          ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 apps/rpn/rpn_stack.cpp:161:35: note: remove 'std::move' call
+CXX     apps/sequence/graph/term_sum_controller.o
 apps/rpn/rpn_stack.cpp: In member function 'I18n::Message Rpn::Stack::operator()(I18n::Message, Poincare::Context*)':
 apps/rpn/rpn_stack.cpp:257:35: warning: moving a temporary object prevents copy elision [-Wpessimizing-move]
   257 |       return doOperation(std::move(messageOperators[i].op(*this)), *context, messageOperators[i].nargs);
       |                          ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 apps/rpn/rpn_stack.cpp:257:35: note: remove 'std::move' call
-CXX     apps/sequence/graph/term_sum_controller.o
 CXX     apps/sequence/list/list_controller.o
 CXX     apps/sequence/list/list_parameter_controller.o
 CXX     apps/sequence/list/sequence_toolbox.o
@@ -364,11 +363,11 @@ CXX     apps/settings/sub_menu/external_controller.o
 CXX     apps/settings/sub_menu/generic_sub_controller.o
 CXX     apps/settings/sub_menu/localization_controller.o
 CXX     apps/settings/sub_menu/math_options_controller.o
-CXX     apps/settings/sub_menu/preferences_controller.o
 apps/settings/sub_menu/exam_mode_controller.cpp: In member function 'virtual void Settings::ExamModeController::willDisplayCellForIndex(HighlightCell*, int)':
 apps/settings/sub_menu/exam_mode_controller.cpp:86:17: warning: unused variable 'preferences' [-Wunused-variable]
    86 |   Preferences * preferences = Preferences::sharedPreferences();
       |                 ^~~~~~~~~~~
+CXX     apps/settings/sub_menu/preferences_controller.o
 CXX     apps/settings/sub_menu/selectable_view_with_messages.o
 CXX     apps/shared/banner_view.o
 CXX     apps/shared/buffer_function_title_cell.o
@@ -503,8 +502,8 @@ CXX     apps/xnt_loop.o
 CXX     bootloader/computer.o
 CXX     escher/src/alternate_empty_view_controller.o
 CXX     escher/src/animation_timer.o
-CXX     escher/src/background_view.o
 CXX     escher/src/app.o
+CXX     escher/src/background_view.o
 CXX     escher/src/bank_view_controller.o
 CXX     escher/src/bordered.o
 CXX     escher/src/buffer_text_view.o
@@ -586,11 +585,11 @@ CXX     escher/src/text_input_helpers.o
 CXX     escher/src/text_view.o
 CXX     escher/src/tiled_view.o
 CXX     escher/src/timer.o
-CXX     escher/src/toggleable_dot_view.o
 escher/src/timer.cpp: In member function 'void Timer::reset(uint32_t)':
 escher/src/timer.cpp:20:16: warning: comparison of integer expressions of different signedness: 'uint32_t' {aka 'unsigned int'} and 'int' [-Wsign-compare]
    20 |   if(NewPeriod != -1){
       |      ~~~~~~~~~~^~~~~
+CXX     escher/src/toggleable_dot_view.o
 CXX     escher/src/toggleable_view.o
 CXX     escher/src/toolbox.o
 CXX     escher/src/transparent_view.o
@@ -704,16 +703,16 @@ CXX     kandinsky/fonts/LargeFontExtended.o
 CXX     kandinsky/fonts/SmallFontExtended.o
 CXX     kandinsky/src/color.o
 CXX     kandinsky/src/context.o
-CXX     kandinsky/src/context_line.o
 CXX     kandinsky/src/context_circle.o
+CXX     kandinsky/src/context_line.o
 CXX     kandinsky/src/context_pixel.o
 CXX     kandinsky/src/context_polygon.o
 CXX     kandinsky/src/context_rect.o
 CXX     kandinsky/src/context_text.o
 CXX     kandinsky/src/font.o
 CXX     kandinsky/src/framebuffer.o
-CXX     kandinsky/src/ion_context.o
 CXX     kandinsky/src/framebuffer_context.o
+CXX     kandinsky/src/ion_context.o
 CXX     kandinsky/src/point.o
 CXX     kandinsky/src/postprocess_context.o
 CXX     kandinsky/src/postprocess_gamma_context.o
@@ -722,8 +721,8 @@ CXX     kandinsky/src/postprocess_zoom_context.o
 CXX     kandinsky/src/rect.o
 CC      liba/src/aeabi-rt/atexit.o
 AS      liba/src/armv7m/longjmp.o
-AS      liba/src/armv7m/setjmp.o
 CC      liba/src/bzero.o
+AS      liba/src/armv7m/setjmp.o
 CC      liba/src/ctype.o
 CC      liba/src/errno.o
 CC      liba/src/external/openbsd/b_exp__D.o
@@ -737,8 +736,8 @@ CC      liba/src/external/openbsd/e_asin.o
 CC      liba/src/external/openbsd/e_asinf.o
 CC      liba/src/external/openbsd/e_atan2.o
 CC      liba/src/external/openbsd/e_atan2f.o
-CC      liba/src/external/openbsd/e_atanhf.o
 CC      liba/src/external/openbsd/e_atanh.o
+CC      liba/src/external/openbsd/e_atanhf.o
 CC      liba/src/external/openbsd/e_cosh.o
 CC      liba/src/external/openbsd/e_coshf.o
 CC      liba/src/external/openbsd/e_exp.o
@@ -750,8 +749,8 @@ CC      liba/src/external/openbsd/e_hypotf.o
 CC      liba/src/external/openbsd/e_lgamma_r.o
 CC      liba/src/external/openbsd/e_lgammaf_r.o
 CC      liba/src/external/openbsd/e_log.o
-CC      liba/src/external/openbsd/e_log10f.o
 CC      liba/src/external/openbsd/e_log10.o
+CC      liba/src/external/openbsd/e_log10f.o
 CC      liba/src/external/openbsd/e_log2.o
 CC      liba/src/external/openbsd/e_logf.o
 CC      liba/src/external/openbsd/e_pow.o
@@ -766,8 +765,8 @@ CC      liba/src/external/openbsd/e_sqrtf.o
 CC      liba/src/external/openbsd/k_cos.o
 CC      liba/src/external/openbsd/k_cosf.o
 CC      liba/src/external/openbsd/k_rem_pio2.o
-CC      liba/src/external/openbsd/k_rem_pio2f.o
 CC      liba/src/external/openbsd/k_sin.o
+CC      liba/src/external/openbsd/k_rem_pio2f.o
 CC      liba/src/external/openbsd/k_sinf.o
 CC      liba/src/external/openbsd/k_tan.o
 CC      liba/src/external/openbsd/k_tanf.o
@@ -802,21 +801,21 @@ CC      liba/src/external/openbsd/s_modff.o
 CC      liba/src/external/openbsd/s_nextafter.o
 CC      liba/src/external/openbsd/s_nextafterf.o
 CC      liba/src/external/openbsd/s_rint.o
-CC      liba/src/external/openbsd/s_roundf.o
 CC      liba/src/external/openbsd/s_round.o
+CC      liba/src/external/openbsd/s_roundf.o
 CC      liba/src/external/openbsd/s_scalbn.o
 CC      liba/src/external/openbsd/s_scalbnf.o
-CC      liba/src/external/openbsd/s_signgam.o
 CC      liba/src/external/openbsd/s_sin.o
-CC      liba/src/external/openbsd/s_tan.o
+CC      liba/src/external/openbsd/s_signgam.o
 CC      liba/src/external/openbsd/s_sinf.o
+CC      liba/src/external/openbsd/s_tan.o
 CC      liba/src/external/openbsd/s_tanf.o
 CC      liba/src/external/openbsd/s_tanh.o
 CC      liba/src/external/openbsd/s_tanhf.o
 CC      liba/src/external/openbsd/s_trunc.o
 CC      liba/src/external/openbsd/s_truncf.o
-CC      liba/src/external/openbsd/w_lgammaf.o
 CC      liba/src/external/openbsd/w_lgamma.o
+CC      liba/src/external/openbsd/w_lgammaf.o
 CC      liba/src/external/sqlite/mem5.o
 CC      liba/src/fpclassify.o
 CC      liba/src/fpclassifyf.o
@@ -998,11 +997,11 @@ CXX     python/port/mod/matplotlib/modmatplotlib.o
 CC      python/port/mod/matplotlib/modmatplotlib_table.o
 CXX     python/port/mod/matplotlib/pyplot/modpyplot.o
 CC      python/port/mod/matplotlib/pyplot/modpyplot_table.o
+CXX     python/port/mod/matplotlib/pyplot/plot_controller.o
 python/port/mod/kandinsky/modkandinsky.cpp: In function 'void* modkandinsky_fill_polygon(size_t, void* const*)':
 python/port/mod/kandinsky/modkandinsky.cpp:158:17: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'unsigned int'} [-Wsign-compare]
   158 |   for(int i=0; i<itemLength; i++) {
       |                ~^~~~~~~~~~~
-CXX     python/port/mod/matplotlib/pyplot/plot_controller.o
 CXX     python/port/mod/matplotlib/pyplot/plot_store.o
 CXX     python/port/mod/matplotlib/pyplot/plot_view.o
 CXX     python/port/mod/os/modos.o
@@ -1072,8 +1071,8 @@ CC      python/src/py/mpprint.o
 CC      python/src/py/mpstate.o
 CC      python/src/py/mpz.o
 CC      python/src/py/nativeglue.o
-CC      python/src/py/nlr.o
 CC      python/src/py/nlraarch64.o
+CC      python/src/py/nlr.o
 CC      python/src/py/nlrpowerpc.o
 CC      python/src/py/nlrsetjmp.o
 CC      python/src/py/nlrthumb.o
@@ -1084,9 +1083,9 @@ CC      python/src/py/obj.o
 CC      python/src/py/objarray.o
 CC      python/src/py/objattrtuple.o
 CC      python/src/py/objbool.o
+CC      python/src/py/objcell.o
 CC      python/src/py/objboundmeth.o
 CC      python/src/py/objclosure.o
-CC      python/src/py/objcell.o
 CC      python/src/py/objcomplex.o
 CC      python/src/py/objdeque.o
 CC      python/src/py/objdict.o
@@ -1100,23 +1099,23 @@ CC      python/src/py/objgetitemiter.o
 CC      python/src/py/objint.o
 CC      python/src/py/objint_longlong.o
 CC      python/src/py/objint_mpz.o
-CC      python/src/py/objlist.o
 CC      python/src/py/objmap.o
+CC      python/src/py/objlist.o
 CC      python/src/py/objmodule.o
-CC      python/src/py/objnamedtuple.o
 CC      python/src/py/objnone.o
+CC      python/src/py/objnamedtuple.o
 CC      python/src/py/objobject.o
 CC      python/src/py/objpolyiter.o
-CC      python/src/py/objrange.o
 CC      python/src/py/objproperty.o
+CC      python/src/py/objrange.o
 CC      python/src/py/objreversed.o
 CC      python/src/py/objset.o
 CC      python/src/py/objsingleton.o
 CC      python/src/py/objslice.o
 CC      python/src/py/objstr.o
 CC      python/src/py/objstringio.o
-CC      python/src/py/objtuple.o
 CC      python/src/py/objstrunicode.o
+CC      python/src/py/objtuple.o
 CC      python/src/py/objtype.o
 CC      python/src/py/objzip.o
 CC      python/src/py/opmethods.o
@@ -1143,7 +1142,6 @@ CC      python/src/py/unicode.o
 CC      python/src/py/vm.o
 CC      python/src/py/vstr.o
 CC      python/src/py/warning.o
-CXX     apps/i18n.o
 CXX     apps/atomic/app.o
 CXX     apps/calculation/app.o
 CXX     apps/code/app.o

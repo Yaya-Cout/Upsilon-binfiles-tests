@@ -19,11 +19,11 @@ make -j8  &>> binpacks/n110/bl.log
 echo Compilation end: $(date) >> binpacks/n110/bl.log
 
 echo Compilation start: $(date) > binpacks/n110/flasher.light.log
-make -j8 flasher.light.bin MODEL=n0100 &> binpacks/n100/flasher.light.log
+make -j8 flasher.light.bin MODEL=n0110 &> binpacks/n110/flasher.light.log
 echo Compilation end: $(date) > binpacks/n110/flasher.light.log
 
 echo Compilation start: $(date) > binpacks/n110/flasher.verbose.log
-make -j8 flasher.verbose.bin MODEL=n0100 &> binpacks/n100/flasher.verbose.log
+make -j8 flasher.verbose.bin MODEL=n0110 &> binpacks/n110/flasher.verbose.log
 echo Compilation end: $(date) > binpacks/n110/flasher.verbose.log
 
 
@@ -37,10 +37,10 @@ mv output/release/device/n0110/binpack/epsilon.onboarding.internal.bin binpacks/
 
 
 mv output/release/device/n0110/binpack/flasher.light.bin binpacks/n110/flasher.light.bin
-mv output/release/device/n0110/binpack/flasher.verbose.bin binpacks/n110/flasher.verbose.bin
+mv output/release/device/n0110/flasher.verbose.bin binpacks/n110/flasher.verbose.bin
 
 echo Building bootloader...
-make -j8 MODEL=n0110 bootloader.bin &> binpacks/n110/bootloader.log
+make -j8 MODEL=n0110 bootloader &> binpacks/n110/bootloader.log
 mv output/release/device/n0110/bootloader.bin binpacks/n110/bootloader.bin
 
 echo Generating checksums...
